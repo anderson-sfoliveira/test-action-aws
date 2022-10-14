@@ -34,7 +34,8 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::229347279197:role/github-action
-        aws-region: sa-east-1
+#        aws-region: sa-east-1
+        aws-region: us-east-1
 
 ##Login to Amazon ECR Private, then build and push a Docker image:
 #    - name: Login to Amazon ECR
