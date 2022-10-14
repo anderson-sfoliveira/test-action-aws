@@ -5,8 +5,8 @@
 # COMANDOS PARA RODAR O CONTAINER DOCKER:
 # docker run --name test-action-aws -p 8080:8080 test-action-aws:latest
 
-#FROM openjdk:11-jdk-slim as build
-FROM adoptopenjdk/openjdk11:alpine
+FROM openjdk:11-jdk-slim as build
+#FROM adoptopenjdk/openjdk11:alpine
 
 WORKDIR /app
 
