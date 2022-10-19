@@ -55,7 +55,7 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::229347279197:role/test-actions-aws
-        aws-region: us-east-2
+        aws-region: us-east-1
 
     - name: Login to Amazon ECR Public
       id: login-ecr-public
