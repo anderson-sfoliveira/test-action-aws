@@ -75,6 +75,7 @@ jobs:
       run: |
         docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
+        echo "::set-output name=image::$REGISTRY/$REPOSITORY:$IMAGE_TAG"
 
     - name: Modify Amazon ECS task definition with second container
       id: render-app-container
