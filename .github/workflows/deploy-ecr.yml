@@ -75,7 +75,8 @@ jobs:
       run: |
         docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
-        echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
+        echo "{image}={$REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG}" >> $GITHUB_OUTPUT
+#        echo "SELECTED_COLOR=green" >> $GITHUB_OUTPUT
 #        echo "::set-output name=image::$REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG"
 #        echo "{image}={$REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG}" >> $GITHUB_OUTPUT
 #
