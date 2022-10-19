@@ -64,12 +64,30 @@ jobs:
         registry-type: public
 
     - name: Build, tag, and push docker image to Amazon ECR Public
+      id: build-image
       env:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
 #        REGISTRY_ALIAS: public-registry
         REGISTRY_ALIAS: p7b1e5h4
         REPOSITORY: test-action-aws
-        IMAGE_TAG: ${{ github.sha }}
+#        IMAGE_TAG: ${{ github.sha }}
+        IMAGE_TAG: develop
       run: |
         docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG .
         docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$IMAGE_TAG
+
+    - name: Modify Amazon ECS task definition with second container
+      id: render-app-container
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: task-definition.json
+        container-name: container-test
+        image: ${{ steps.build-image.outputs.image }}
+
+    - name: Deploy to Amazon ECS service
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.render-app-container.outputs.task-definition }}
+        service: service-test
+        cluster: cluster-test
+        wait-for-service-stability: true
