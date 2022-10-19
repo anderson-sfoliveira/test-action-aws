@@ -56,7 +56,6 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:229347279197:task-definition/task-d-test:5",
   "family": "task-d-test",
   "requiresAttributes": [
     {
@@ -79,7 +78,6 @@
   "networkMode": "bridge",
   "runtimePlatform": null,
   "cpu": null,
-  "revision": 5,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
