@@ -8,6 +8,6 @@ public class ResourceController {
 
     @GetMapping(value = "methodTest")
     public String methodTest(){
-        return "Método para teste funcionando!!!!!! Com layers.";
+        return "Método para teste funcionando!!!!!! Com layers!!!";
     }
 }
