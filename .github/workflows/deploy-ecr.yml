@@ -99,6 +99,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.render-app-container.outputs.task-definition }}
-        service: service-test3
+        service: service-test34
         cluster: cluster-test
         wait-for-service-stability: true
