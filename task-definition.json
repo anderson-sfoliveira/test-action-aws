@@ -11,7 +11,7 @@
         {
           "hostPort": 80,
           "protocol": "tcp",
-          "containerPort": 80
+          "containerPort": 8080
         }
       ],
       "command": null,
@@ -26,7 +26,7 @@
       "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
-      "memoryReservation": 128,
+      "memoryReservation": 300,
       "volumesFrom": [],
       "stopTimeout": null,
       "image": "public.ecr.aws/p7b1e5h4/test-action-aws:develop",
@@ -56,7 +56,7 @@
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-2:229347279197:task-definition/task-d-test:2",
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:229347279197:task-definition/task-d-test:5",
   "family": "task-d-test",
   "requiresAttributes": [
     {
@@ -79,7 +79,7 @@
   "networkMode": "bridge",
   "runtimePlatform": null,
   "cpu": null,
-  "revision": 2,
+  "revision": 5,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
   "proxyConfiguration": null,
